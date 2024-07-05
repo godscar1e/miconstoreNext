@@ -1,0 +1,21 @@
+@media (max-width: 1390px) {
+    .service {
+        max-width: 930px !important;
+
+        &__preview {
+            justify-content: space-around !important;
+
+        }
+
+        &__contact-price-block {
+            justify-content: space-around !important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .forwgridtable {
+        grid-template-columns: 1fr !important;
+        gap: 1.875rem !important;
+    }
+}

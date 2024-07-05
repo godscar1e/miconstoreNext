@@ -1,0 +1,27 @@
+@mixin gradientButton {
+    background: linear-gradient(to right, $lighBlue, #99D0D3);
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    border-radius: 2.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    color: $mainBlue;
+
+    &:hover {
+        box-shadow: 0 0 20px 7px rgba(#99D0D3, 5);
+    }
+}
+
+@mixin label {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+    position: relative;
+    font-size: clamp(35px, 2.5vw, 48px);
+}
+
+@mixin block {
+    padding: 75px 0 150px;
+}

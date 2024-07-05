@@ -1,0 +1,173 @@
+@import "../../../app/styles/starter";
+
+.additServiceBlock {
+    width: 100%;
+    @include block;
+    position: relative;
+    background-color: #D6DFE8FE;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -20px;
+        width: 103%;
+        height: 100%;
+        background-color: #D6DFE8FE;
+        // background-image: url("../images/Rectangle 80.png");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+
+    .label {
+        @include label;
+    }
+
+    .services {
+        padding: 0 20px;
+        max-width: 1360px;
+        width: 100%;
+        margin: 63px auto 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 60px;
+
+
+        .service {
+            max-width: 630px;
+            width: 100%;
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 44px 30px 60px 30px;
+            border-radius: 25px;
+            background-color: #A4BFD9;
+            box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.25);
+
+            .label {
+                font-family: Inter;
+                font-size: 36px;
+                font-weight: 400;
+                line-height: 43.57px;
+                text-align: center;
+
+            }
+
+            .serviceImages {
+                max-width: 580px;
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                gap: 30px;
+                justify-content: space-between;
+            }
+
+            &__label-2 {
+                margin-top: -14px;
+                font-family: Inter;
+                font-size: 30px;
+                font-weight: 400;
+                line-height: 43.57px;
+                text-align: center;
+            }
+
+            .listContainer {
+
+                .serviceList {
+                    padding-left: 30px;
+
+                    .listItem {
+                        font-family: Inter;
+                        font-size: 18px;
+                        font-weight: 300;
+                        line-height: 21.78px;
+                        text-align: left;
+
+                        list-style-type: disc;
+                    }
+                }
+            }
+
+            .description {
+                .description_text {
+                    font-family: Inter;
+                    font-size: 18px;
+                    font-weight: 300;
+                    line-height: 21.78px;
+                    text-align: left;
+                }
+            }
+
+
+
+            .typeBtnsContainer {
+                display: flex;
+                justify-content: center;
+
+                button {
+                    font-family: Inter;
+                    max-width: 163px;
+                    width: 100%;
+                    height: 34px;
+                    border-radius: 5px;
+                    border: 1px solid $mainBlue;
+
+                    &:hover {
+                        background-color: #99D0D3;
+                    }
+
+                    &:active {
+                        background-color: #99D0D3;
+                    }
+                }
+
+                .offlineBtn {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                    border-right: none;
+
+                }
+
+                .onlineBtn {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+
+            .priceContainer {
+                display: flex;
+                justify-content: space-between;
+
+                .contactBtn {
+                    max-width: 316px;
+                    width: 100%;
+                    font-family: Inter;
+                    border-radius: 5px;
+                    border: 1px solid $mainBlue;
+
+                    &:hover {
+                        background-color: #99D0D3;
+                    }
+                }
+
+                .pricentime {
+                    font-family: Inter;
+                    font-size: 32px;
+                    font-weight: 400;
+                    line-height: 38.73px;
+                    text-align: center;
+
+                }
+            }
+
+        }
+    }
+}

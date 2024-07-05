@@ -1,0 +1,494 @@
+@import "../../app/styles/starter";
+
+.main {
+    flex: 1 1 auto;
+    margin-top: 8px;
+    width: 100%;
+
+    height: auto;
+
+    .container {
+        padding: 0 20px;
+
+        .bg {
+            width: calc(100% + 50px);
+            margin: 0 -20px;
+            max-height: clamp(200px, 48.542vw, 932px);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-image: url('/images/bgimage.png');
+        }
+
+        .body {
+            max-width: 1320px;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+
+            .mainleftblock {
+                margin-top: 11.667vw;
+
+                h1 {
+                    max-width: 600px;
+                    width: 100%;
+                    font-size: 4.688vw; //90px
+                    font-weight: 400;
+                    text-align: center;
+                }
+
+                .caption {
+                    display: flex;
+                    justify-content: space-between;
+                    max-width: 555px;
+                    width: 100%;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        // position: absolute;
+                        width: 30px;
+                        height: 2px;
+                        align-self: center;
+                        background-color: $mainBlue;
+                        // margin-right: 10px;
+                    }
+
+                    p {
+                        max-width: 495px;
+                        width: 100%;
+                        font-family: Inter;
+                        font-size: clamp(12px, 1.042vw, 20px);
+                        align-items: center;
+
+                    }
+
+                }
+
+                .mainblockbtns {
+                    margin-top: 60px;
+                    display: flex;
+                    justify-content: center;
+
+                    .register_btn {
+                        max-width: 480px;
+                        width: 100%;
+                        height: 120px;
+                        @include gradientButton;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .rightsideimage {
+                max-width: clamp(200px, 35.938vw, 690px);
+                height: auto;
+
+                img {
+
+                    max-width: clamp(200px, 35.938vw, 690px);
+                    height: auto;
+                    display: block;
+                }
+            }
+        }
+
+        .forwhoblock {
+            max-width: 1320px;
+            width: 100%;
+            margin: 0 auto;
+            @include block;
+
+            .forwhoblock__label {
+                max-width: 284px;
+                @include label;
+            }
+
+            .gridtable {
+                margin-top: 60px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                gap: 3.125vw;
+
+                &__item {
+                    position: relative;
+                    max-width: 630px;
+                    // height: 272px;
+                    overflow: hidden;
+
+                    img {
+                        max-width: 630px;
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    .content__overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        padding: 20px;
+                        box-sizing: border-box;
+                        text-align: center;
+
+                        h3 {
+                            position: relative;
+                            font-size: 32px;
+                            font-weight: 400;
+                            text-transform: uppercase;
+                        }
+
+                        p {
+                            margin-top: 15px;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .programblock {
+            width: 100%;
+            @include block;
+            position: relative;
+            background-color: #D6DFE8FE;
+            // background-image: url("../images/Rectangle 80.png");
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -20px;
+                width: 103%;
+                height: 100%;
+                background-color: #D6DFE8FE;
+                // background-image: url("../images/Rectangle 80.png");
+                background-attachment: fixed;
+                background-size: cover;
+                background-position: center;
+                z-index: -1;
+            }
+
+            .label {
+                max-width: 315px;
+                z-index: 1;
+                @include label;
+            }
+
+            .program {
+                margin-top: 66px;
+                display: flex;
+                justify-content: center;
+                gap: 1.563vw;
+
+                .progbtns {
+                    max-width: 510px;
+                    display: grid;
+                    grid-template-columns: 2fr 2fr;
+                    grid-template-rows: auto auto;
+                    gap: 1.563vw;
+
+                    .programbtn {
+                        max-width: 240px;
+                        height: 170px;
+                        padding: 0 24px;
+                        font-size: clamp(20px, 1.563vw, 30px);
+                        border-radius: 25px;
+                        border: 1px solid $lighBlue;
+                        background-color: transparent;
+                        box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+                        transition: all 0.5s ease;
+
+                        &:hover {
+                            background-color: $lighBlue;
+                        }
+
+                        &.active {
+                            background-color: $lighBlue;
+                        }
+
+                    }
+                }
+
+                .programwindow {
+                    max-width: 780px;
+                    width: 100%;
+                    height: 570px;
+                    border-radius: 25px;
+                    background-color: $lighBlue;
+                    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+
+                    &__info {
+                        padding: 51px 60px;
+                        display: none;
+
+                        &.active {
+                            display: block;
+                        }
+
+                        h2 {
+                            text-align: center;
+                            font-size: clamp(20px, 1.563vw, 30px);
+
+                            font-weight: 400;
+                        }
+
+                        p {
+                            margin-top: 15px;
+                            font-size: clamp(18px, 1.25vw, 24px);
+                        }
+
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .progbtns {
+                        grid-template-columns: 1fr;
+                        gap: 1.875rem;
+                    }
+                }
+            }
+        }
+
+        .questionblock {
+            @include block;
+            max-width: 1320px;
+            width: 100%;
+            margin: 0 auto;
+
+            &__label {
+                @include label;
+            }
+
+            .questbtns {
+                margin-top: 30px;
+                display: flex;
+                justify-content: center;
+
+                button {
+                    height: 74px;
+                    font-size: 36px;
+                    padding: 0 30px;
+                    border: 1px solid $lighBlue;
+                    transition: all 0.5s ease;
+
+                }
+
+                .consultbtn {
+                    border-top-left-radius: 15px;
+                    border-bottom-left-radius: 15px;
+
+                    &:hover {
+                        // box-shadow: -10px 12px 20px rgba(153, 208, 211, 0.8);
+                        background-color: $lighBlue;
+                    }
+
+                    &.active {
+                        background-color: $lighBlue;
+                    }
+                }
+
+                .manualtherapybtn {
+                    margin-left: 0;
+                    border-top-right-radius: 15px;
+                    border-bottom-right-radius: 15px;
+                    border-left: none !important;
+
+                    &:hover {
+                        // box-shadow: -10px 12px 20px rgba(153, 208, 211, 0.8);
+                        background-color: #99D0D3;
+                    }
+
+                    &.active {
+                        background-color: #99D0D3;
+                    }
+                }
+            }
+
+            .questionlist {
+                margin: 60px auto 0 auto;
+
+                .question {
+                    max-width: 1320px;
+                    width: 100%;
+                    height: auto;
+                    padding: 14px 15px;
+                    border-radius: 15px;
+                    list-style: disc;
+                    position: relative;
+                    overflow: hidden;
+                    transition: max-height 0.5s ease;
+                    cursor: pointer;
+                    max-height: 2.8em;
+
+                    &.consultation {
+                        background-color: $lighBlue;
+                    }
+
+                    &.manual-therapy {
+                        background-color: #99D0D3;
+                    }
+
+                    &:not(:first-child) {
+                        margin-top: 31px;
+                    }
+
+                    .extraText {
+                        display: block;
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                    }
+
+                    &.expanded {
+                        .extraText {
+                            opacity: 1;
+                        }
+
+                        max-height: 100em;
+                    }
+
+                    &.hidden {
+                        display: none;
+                    }
+                }
+            }
+
+        }
+
+        .feedbacksblock {
+            width: 100%;
+            @include block;
+            position: relative;
+            background-color: #D6DFE8FE;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -20px;
+                width: 103%;
+                height: 100%;
+                background-color: #D6DFE8FE;
+                // background-image: url("../images/Rectangle 80.png");
+                background-attachment: fixed;
+                background-size: cover;
+                background-position: center;
+                z-index: -1;
+            }
+
+            &__label {
+                max-width: 219px;
+                @include label;
+            }
+        }
+
+        .rateblock {
+            @include block;
+
+            .label {
+                @include label;
+            }
+
+            .rates {
+                margin: 60px auto;
+                max-width: 1320px;
+                display: flex;
+                gap: 30px;
+                flex-wrap: wrap;
+
+
+                .rate {
+                    max-width: 420px;
+                    min-height: 412px;
+                    height: 29.167vw;
+                    padding: 60px 30px;
+                    display: flex;
+                    // justify-content: space-between;
+                    flex-direction: column;
+                    border-radius: 25px;
+                    background: linear-gradient(to right, $lighBlue, #99D0D3);
+                    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.25);
+
+                    .label {
+                        font-family: Inter;
+                        font-size: 40px;
+                        font-weight: 400;
+                        text-align: center;
+                        color: $mainBlue;
+                    }
+
+                    .container {
+                        margin-top: 45px;
+
+                        .rateList {
+                            .rateItem {
+                                font-family: Inter;
+                                font-size: 18px;
+                                font-weight: 500;
+                                list-style: disc;
+
+                            }
+                        }
+                    }
+
+                    .priceContainer {
+                        font-size: 32px;
+                        font-weight: 400;
+                        line-height: 38.73px;
+                        text-align: right;
+                        margin-top: auto;
+
+                        .oldprice {
+                            font-family: Inter;
+                            color: #EEEEEE;
+                            text-decoration: line-through;
+                        }
+
+                        .newprice {
+                            margin-right: 31px;
+                            font-family: Inter;
+                            color: $mainBlue;
+                        }
+                    }
+                }
+            }
+
+            .contactbtnContainer {
+                display: flex;
+                justify-content: center;
+
+                .contactsBtn {
+                    max-width: 480px;
+                    width: 100%;
+
+                    height: clamp(46px, 3.958vw, 76px);
+                    border-radius: 15px;
+                    font-family: Inter;
+                    font-size: 32px;
+                    background-color: #D6DFE8;
+                    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+                }
+            }
+        }
+
+
+
+
+    }
+}
