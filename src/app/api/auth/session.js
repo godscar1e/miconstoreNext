@@ -1,4 +1,3 @@
-// src/pages/api/auth/session.js
 import { getSession } from "next-auth/react";
 
 export default async (req, res) => {

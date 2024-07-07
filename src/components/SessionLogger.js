@@ -1,27 +1,44 @@
-// components/SessionLogger.js
-import { useEffect, useState } from "react";
+
+"use client";
+import { useEffect, useRef } from "react";
+
+export const setHasFetchedSession = (value) => {
+    hasFetchedSession.current = value;
+};
 
 const SessionLogger = ({ onSessionChange }) => {
+    const hasFetchedSession = useRef(false);
+
     useEffect(() => {
         const fetchSession = async () => {
             try {
                 const response = await fetch("/api/auth/session");
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
                 const sessionData = await response.json();
 
                 if (sessionData?.user) {
                     console.log("User is logged in:", sessionData.user);
-                    onSessionChange(sessionData); // Передаем данные о сессии в родительский компонент
+                    onSessionChange(sessionData);
                 } else {
                     console.log("User is not logged in.");
-                    onSessionChange(null); // Устанавливаем null, если пользователь не авторизован
+                    onSessionChange(null);
                 }
             } catch (error) {
                 console.error("Error fetching session:", error);
-                onSessionChange(null); // Обработка ошибок
+                onSessionChange(null);
             }
         };
 
-        fetchSession(); // Вызываем функцию при монтировании
+        if (!hasFetchedSession.current) {
+            fetchSession();
+            hasFetchedSession.current = true;
+        }
+
+        const intervalId = setInterval(fetchSession, 1000);
+
+        return () => clearInterval(intervalId);
     }, [onSessionChange]);
 
     return null; // Компонент не рендерит ничего в UI

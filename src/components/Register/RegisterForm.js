@@ -2,8 +2,10 @@
 
 import { useRouter } from "next/navigation";
 
-export default function RegisterForm() {
+import styles from "./RegisterForm.module.scss";
+import formStyles from "../../app/styles/_form.module.scss";
 
+export default function RegisterForm() {
     const router = useRouter();
 
     async function handleSubmit(event) {
@@ -14,40 +16,75 @@ export default function RegisterForm() {
 
             const name = formData.get('name');
             const email = formData.get('email');
+            const surname = formData.get('surname');
             const password = formData.get('password');
+            const phone = formData.get('phone');
+            const repeatPassword = formData.get('repeatpassword');
 
+            if (password !== repeatPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            const userData = {
+                name,
+                email,
+                surname,
+                password,
+                phone,
+            };
+
+            console.log("Data to be sent:", userData);
             const response = await fetch('/api/register', {
                 method: 'POST',
                 headers: {
-                    "content-type": "application/json",
+                    "Content-Type": "application/json",
                 },
-                body: JSON.stringify({
-                    name,
-                    email,
-                    password
-                })
+                body: JSON.stringify(userData)
             });
 
-            response.status === 201 && router.push('/login')
+            if (response.status === 201) {
+                router.push('/login');
+            } else {
+                console.error("Registration failed:", response.statusText);
+            }
         } catch (e) {
             console.error(e.message);
         }
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label>Name</label>
-                <input type="name" name="name" id="name" />
+        <>
+            <form className={styles.form} onSubmit={handleSubmit}>
+                <div className={styles.formContainer}>
 
-                <label>Email</label>
-                <input type="email" name="email" id="email" />
-
-                <label>Password</label>
-                <input type="text" name="password" id="password" />
-
-                <button type="submit">Register</button>
-            </form>
-        </div >
+                    <div className={formStyles.inputGroup}>
+                        <label className={formStyles.label}>Имя</label>
+                        <input type="text" name="name" id="name" required />
+                    </div>
+                    <div className={formStyles.inputGroup}>
+                        <label className={formStyles.label}>Эл. адрес</label>
+                        <input type="email" name="email" id="email" required />
+                    </div>
+                    <div className={formStyles.inputGroup}>
+                        <label className={formStyles.label}>Фамилия</label>
+                        <input type="text" name="surname" id="surname" required />
+                    </div>
+                    <div className={formStyles.inputGroup}>
+                        <label className={formStyles.label}>Пароль</label>
+                        <input type="password" name="password" id="password" required />
+                    </div>
+                    <div className={formStyles.inputGroup}>
+                        <label className={formStyles.label}>Номер телефона</label>
+                        <input type="text" name="phone" id="phone" required />
+                    </div>
+                    <div className={formStyles.inputGroup}>
+                        <label className={formStyles.label}>Подтвердите пароль</label>
+                        <input type="password" name="repeatpassword" id="repeatpassword" required />
+                    </div>
+                </div>
+                <button type="submit">Зарегистрироваться</button>
+            </form >
+        </>
     );
 }

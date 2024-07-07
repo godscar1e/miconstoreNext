@@ -1,0 +1,30 @@
+@import "../../app/styles/starter";
+
+
+.inputGroup {
+    min-height: 72px;
+    height: auto;
+
+    .label {
+        margin-left: 15px;
+        color: #444444;
+    }
+
+    input {
+        // max-width: 500px;
+        width: 100%;
+        height: 47px;
+        margin: 10px 0 30px 0;
+        padding-left: 40px;
+        color: $mainBlue;
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.94px;
+        text-align: left;
+        border-radius: 5px;
+        border: 1px solid $mainBlue;
+        word-wrap: break-word;
+        outline: none;
+    }
+}

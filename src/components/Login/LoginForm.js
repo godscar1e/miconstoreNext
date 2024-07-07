@@ -4,6 +4,9 @@ import { doCredentialLogin } from "@/app/actions";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import styles from "./LoginForm.module.scss";
+import formStyles from "../../app/styles/_form.module.scss";
+
 export default function LoginForm() {
     const router = useRouter();
     const [error, setError] = useState("");
@@ -28,16 +31,16 @@ export default function LoginForm() {
     return (
         <>
             <div>{error}</div>
-            <form onSubmit={onSubmit}>
-                <div>
-                    <label htmlFor="email">Email</label>
+            <form className={styles.form} onSubmit={onSubmit}>
+                <div className={formStyles.inputGroup}>
+                    <label htmlFor="email">Эл. адрес</label>
                     <input type="email" name="email" id="email" required />
                 </div>
-                <div>
-                    <label htmlFor="password">Password</label>
+                <div className={formStyles.inputGroup}>
+                    <label htmlFor="password">Пароль</label>
                     <input type="password" name="password" id="password" required />
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit">Войти</button>
             </form>
 
         </>

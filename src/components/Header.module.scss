@@ -1,6 +1,7 @@
 @import "../app/styles/starter";
 
 .header {
+
     .header__container {
         padding: 0 20px;
 
@@ -94,24 +95,35 @@
                 color: $mainBlue;
             }
 
-            .header__tomainbtn {
-                display: none;
-                width: 187px;
+            // .header__tomainbtn {
+            //     width: 187px;
+            //     height: 57px;
+            //     border-radius: 15px;
+            //     border: 1px solid $mainBlue;
+
+            //     font-size: 24px;
+            //     font-weight: 400;
+            //     transition: background 0.3s ease-out, opacity 0.3s ease;
+
+            //     &:hover {
+            //         background: linear-gradient(to right, #a7f3d0, #99D0D3);
+            //         opacity: 0.9;
+            //     }
+            // }
+
+            .headerBtn {
+                width: 198px;
                 height: 57px;
                 border-radius: 15px;
-                border: 1px solid $mainBlue;
-
                 font-size: 24px;
                 font-weight: 400;
-                transition: background 0.3s ease, opacity 0.3s ease;
+                text-align: center;
+                border: 1px solid $mainBlue;
+                transition: background 0.3s ease-out, opacity 0.3s ease;
 
                 &:hover {
                     background: linear-gradient(to right, #a7f3d0, #99D0D3);
                     opacity: 0.9;
-                }
-
-                &.show {
-                    display: block;
                 }
             }
         }

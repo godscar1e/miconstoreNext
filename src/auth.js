@@ -1,11 +1,9 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 import { User } from "./model/user-model";
 import bcrypt from "bcryptjs";
-
 
 export const {
     handlers: { GET, POST },
@@ -59,17 +57,16 @@ export const {
                     response_type: "code",
                 },
             },
-        }),
-        GitHubProvider({
-            clientId: process.env.GITHUB_CLIENT_ID,
-            clientSecret: process.env.GITHUB_CLIENT_SECRET,
-            authorization: {
-                params: {
-                    prompt: "consent",
-                    access_type: "offline",
-                    response_type: "code",
-                },
+            async profile(profile) {
+                const user = await User.findOne({ email: profile.email });
+                if (!user) {
+                    throw new Error("User not found. Please register at /register");
+                }
+                return user;
             },
         }),
     ],
+    pages: {
+        error: '/register', // Redirect to a custom error page
+    },
 });

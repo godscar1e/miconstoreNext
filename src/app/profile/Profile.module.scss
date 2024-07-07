@@ -1,14 +1,10 @@
 @import "../styles/starter";
 
 
-// body {
-//     overflow: hidden;
-// }
 .wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
-
 
     .main {
         &__container {
@@ -48,6 +44,9 @@
                             align-items: center;
                             padding: 25px 34px;
                             // margin-left: 35px;
+                            font-size: 24px;
+                            padding-left: 34px;
+                            font-weight: 400;
                             cursor: pointer;
                             transition: max-width 0.5s ease,
                                 width 0.5s ease,
@@ -200,15 +199,18 @@
                                     border: 1px solid linear-gradient(135deg, #A4BFD9 0%, #99D0D3 100%);
                                 }
 
-                                .photochange-info {
-                                    .user-name {
+                                .photochange_info {
+                                    .user_name {
+                                        font-family: Georgia;
                                         font-size: 24px;
                                         font-weight: 400;
                                         line-height: 27.27px;
                                         text-align: left;
+                                        color: #000000;
+
                                     }
 
-                                    .user-type {
+                                    .user_type {
                                         margin-top: 6px;
                                         font-size: 18px;
                                         font-weight: 400;
