@@ -1,6 +1,6 @@
 @mixin gradientButton {
     background: linear-gradient(to right, $lighBlue, #99D0D3);
-    font-family: Inter;
+
     font-size: 24px;
     font-weight: 400;
     border-radius: 2.2rem;
@@ -17,6 +17,7 @@
 @mixin label {
     margin: 0 auto;
     text-align: center;
+    font-family: Georgia;
     font-weight: 400;
     position: relative;
     font-size: clamp(35px, 2.5vw, 48px);

@@ -5,7 +5,20 @@
     min-height: 72px;
     height: auto;
 
+    .phoneInput {
+        height: 72px;
+
+        .PhoneInput {
+            height: 72px;
+
+            .PhoneInputCountry {}
+
+        }
+
+    }
+
     .label {
+        font-family: Georgia;
         margin-left: 15px;
         color: #444444;
     }
@@ -14,10 +27,10 @@
         // max-width: 500px;
         width: 100%;
         height: 47px;
-        margin: 10px 0 30px 0;
+        margin-top: 10px;
         padding-left: 40px;
         color: $mainBlue;
-        font-family: Inter;
+
         font-size: 14px;
         font-weight: 400;
         line-height: 16.94px;
@@ -27,4 +40,16 @@
         word-wrap: break-word;
         outline: none;
     }
+}
+
+
+
+
+.error {
+    color: red;
+    font-size: 15px;
+}
+
+.passError {
+    margin-bottom: 20px;
 }

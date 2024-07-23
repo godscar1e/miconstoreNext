@@ -1,11 +1,9 @@
-@import "https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900&display=swap";
-
 @import "https://fonts.googleapis.com/css?family=Georgia:100,200,300,regular,500,600,700,800,900&display=swap";
 
 @import "vars";
 
 * {
-    font-family: "Georgia";
+    // 
     font-style: normal;
     line-height: normal;
 
@@ -100,6 +98,11 @@ button {
     outline: none;
 }
 
+textarea {
+    resize: none;
+    outline: none;
+}
+
 input {
     outline: none;
 }
@@ -109,7 +112,6 @@ html {
     padding: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: "Georgia";
     font-style: normal;
     scroll-behavior: smooth;
 }
@@ -119,7 +121,6 @@ body {
     padding: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: "Georgia";
     font-style: normal;
     font-size: 18px;
     font-weight: 400;

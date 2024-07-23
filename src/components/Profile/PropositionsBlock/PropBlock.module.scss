@@ -1,0 +1,139 @@
+@import "../../../app/styles/starter";
+
+.container {
+    padding-right: 20px;
+
+    .form {
+        .mainBlock {
+            max-width: 780px;
+            width: 100%;
+            max-height: 517px;
+            height: 517px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 15px;
+            border: 1px solid #000000;
+
+            .topblock {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                input {
+                    max-width: 407px;
+                    width: 100%;
+                    height: 36px;
+                    padding: 0 30px;
+                    border-radius: 5px;
+                    border: 1px solid $mainBlue;
+                    font-family: Georgia;
+                    font-size: 14px;
+
+                    &::placeholder {
+                        color: gray;
+                    }
+
+                }
+
+                .warning {
+
+                    p {
+                        display: flex;
+                        gap: 10px;
+                        font-family: Georgia;
+                        font-size: 14px;
+                        text-align: left;
+                        color: $mainBlue;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            width: 19px;
+                            height: 16px;
+                            background-repeat: no-repeat;
+                            background-image: url('../../../../public/icons/warning-ico.svg');
+                        }
+                    }
+                }
+            }
+
+            .textarea {
+                max-width: 720px;
+                width: 100%;
+                max-height: 391px;
+                height: 391px;
+
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 16.94px;
+                text-align: left;
+                color: #000000;
+                border: none;
+            }
+        }
+
+        .bottomBlock {
+            margin-top: 43px;
+            display: flex;
+            justify-content: space-between;
+
+            .fileInput {
+                display: flex;
+                justify-content: space-between;
+                max-width: 222px;
+                width: 100%;
+                cursor: pointer;
+
+                input {}
+
+                p {
+                    max-width: 170px;
+                    width: 100%;
+                    height: 40px;
+                    font-family: Georgia;
+                    font-size: 18px;
+                    line-height: 20.45px;
+                    text-align: left;
+
+                }
+            }
+
+            .propButtons {
+                display: flex;
+                justify-content: flex-end;
+                gap: 30px;
+                max-width: 510px;
+                width: 100%;
+
+                button {
+                    max-width: 240px;
+                    width: 100%;
+                    height: 40px;
+                    border-radius: 5px;
+                    border: 1px solid #16354D;
+                    font-family: Georgia;
+                    font-size: 18px;
+                    line-height: 20.45px;
+                    transition: color 0.3s ease, background-color 0.3s ease, ;
+                }
+
+                .cancelBtn {
+                    &:hover {
+                        color: $mainBlue;
+                        background-color: $lighBlue;
+                    }
+
+                }
+
+                .sendBtn {
+                    &:hover {
+                        color: #ffff;
+                        background-color: $mainBlue;
+                    }
+                }
+            }
+        }
+    }
+}

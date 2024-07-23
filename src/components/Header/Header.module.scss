@@ -1,0 +1,133 @@
+@import "../../app/styles/starter.scss";
+
+.header {
+    .header__container {
+        padding: 0 20px;
+
+        .headerbody {
+            max-width: 1320px;
+            width: 100%;
+            height: 120px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            align-items: center;
+
+            @media (max-width: 550px) {
+                height: 70px;
+            }
+
+            &.headerchanged {
+                justify-content: left;
+            }
+
+            &__logo {
+                padding-right: 30px;
+            }
+
+            .headernav {
+                max-width: 1200px;
+                width: 100%;
+                margin: auto 0;
+
+                &.hidden {
+                    display: none;
+                }
+
+                .navlist {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    &__item {
+                        font-family: Georgia;
+                        font-size: 24px;
+                        text-transform: uppercase;
+
+                        a {
+                            position: relative;
+                            display: inline-block;
+                            transition: color 0.3s, text-decoration 0.3s;
+                            color: $mainBlue;
+
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                width: 100%;
+                                height: 1px;
+                                bottom: -4px;
+                                left: 0;
+                                background-color: $mainBlue;
+                                z-index: -1;
+                                transform: scaleX(0);
+                                transition: all 0.3s ease-in-out 0s;
+                            }
+
+                            &:hover:before {
+                                transform: scaleX(1);
+                            }
+
+                            &.signup-link,
+                            &.profile-link {
+                                &:before {
+                                    content: none;
+                                }
+                            }
+                        }
+
+                        button {
+                            width: 194px;
+                            height: 55px;
+                            border-radius: 15px;
+                            border: 1px solid $mainBlue;
+                            font-family: Georgia;
+                            transition: background 0.5s ease;
+
+                            &:hover {
+                                background: linear-gradient(to right, #a7f3d0, #99D0D3);
+                            }
+                        }
+                    }
+                }
+
+            }
+
+
+
+            a {
+                text-decoration: none;
+                color: $mainBlue;
+            }
+
+            .headerBtn {
+                width: 198px;
+                height: 57px;
+                border-radius: 15px;
+                font-family: Georgia;
+                font-size: 24px;
+                font-weight: 400;
+                text-align: center;
+                border: 1px solid $mainBlue;
+                transition: background 0.3s ease-out, opacity 0.3s ease;
+
+                &:hover {
+                    background: linear-gradient(to right, #a7f3d0, #99D0D3);
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1080px) {
+    .headerbody__logo {
+        position: absolute;
+        left: calc(48% - 25px) !important;
+    }
+
+    .navlist {
+        display: none !important;
+    }
+
+}

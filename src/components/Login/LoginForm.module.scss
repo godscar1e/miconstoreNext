@@ -12,13 +12,19 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, auto);
-        // grid-row-gap: 30px;
+        grid-row-gap: 30px;
         grid-column-gap: 60px;
         margin-top: 30px;
 
         input {
             max-width: 700px;
         }
+    }
+
+    .loginFormContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
 
     button {
@@ -30,6 +36,7 @@
         border-radius: 5px;
         border: 1px solid $mainBlue;
         color: $mainBlue;
+        font-family: Georgia;
         font-size: 24px;
         font-weight: 400;
         line-height: 27.27px;

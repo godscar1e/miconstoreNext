@@ -12,8 +12,10 @@
         padding: 0 20px;
         max-height: 100vh;
         overflow-y: auto;
+        
 
         .title {
+            font-family: Georgia;
             font-size: 24px;
             font-weight: 400;
             text-align: center;
@@ -22,6 +24,7 @@
         }
 
         .link {
+            font-family: Georgia;
             margin: 5px auto 0 auto;
             font-family: Georgia;
             font-size: 18px;
