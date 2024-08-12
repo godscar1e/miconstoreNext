@@ -7,8 +7,8 @@ export async function dbConnect() {
 
 	try {
 		const conn = await mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {
-			// useNewUrlParser: true,
-			// useUnifiedTopology: true,
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
 		})
 		return conn
 	} catch (e) {
