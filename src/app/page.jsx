@@ -1,18 +1,21 @@
-import "./styles/_vars.scss";
-import "./styles/globals.scss";
-import Header from '../components/Header/Header';
-import MainContent from '../components/HomePage/MainContent';
-import Footer from '../components/Footer/Footer';
+import styles from './page.module.scss'
+import TopBlock from '@/components/HomePage/TopBlock/TopBlock'
+import BottomBlock from '@/components/HomePage/BottomBlock/BottomBlock'
+import { redirect } from 'next/navigation'
+import { auth } from '@/auth/auth'
 
 const Home = async () => {
 
+  // const session = await auth()
+  // if (!session.user) redirect('/signin')
   return (
-    <div className="wrapper">
-      <Header />
-      <MainContent />
-      <Footer />
-    </div>
-  );
+    <main className={styles.main}>
+      <div className={styles.container}>
+        <TopBlock />
+        <BottomBlock />
+        {/* <h1>{session?.user?.name}</h1> */}
+      </div>
+    </main>
+  )
 }
-
-export default Home;
+export default Home

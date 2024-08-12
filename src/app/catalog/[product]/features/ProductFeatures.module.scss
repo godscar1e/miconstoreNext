@@ -1,0 +1,132 @@
+@import '../../../../styles/vars';
+
+.featuresSection {
+    padding: 40px 40px 130px 40px;
+    border-bottom: 1px solid $borderColor;
+
+    h2 {
+        font-size: 24px;
+        font-weight: 500;
+        color: $mainBlack;
+    }
+
+    .lists {
+        display: flex;
+    }
+
+    .list {
+        width: 298px;
+        margin-top: 40px;
+
+        .listItem {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            font-size: 18px;
+            font-weight: 500;
+            color: $goldColor;
+
+            &::after {
+                content: "";
+                border-bottom: 1px dotted $borderColor;
+                margin: 0 2px;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 22px;
+            }
+
+        }
+
+        .listItem2 {
+            color: $lightGray;
+
+            &:not(:last-child) {
+                margin-bottom: 22px;
+            }
+        }
+
+
+    }
+}
+
+.priceSection {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+
+    .priceContainer {
+        display: flex;
+        gap: 10px;
+
+        .price {
+            font-size: 64px;
+            font-weight: 300;
+            line-height: 40px;
+            color: $goldColor;
+        }
+
+        .oldprice {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 15px;
+            color: $lightGray;
+            text-decoration: line-through;
+        }
+    }
+
+    .buttonsContainer {
+        display: flex;
+        gap: 30px;
+        max-width: 506px;
+        width: 100%;
+
+        button {
+            max-width: 238px;
+            width: 100%;
+            height: 40px;
+            font-size: 18px;
+            font-weight: 300;
+            border: 1px solid $lightGray;
+        }
+
+        .addToBagBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            color: $mainBlack;
+            position: relative;
+
+            .iconHover {
+                display: none;
+            }
+
+            &:hover {
+                color: $borderColor;
+                background-color: $mainBlack;
+
+                .icon {
+                    display: none;
+                }
+
+                .iconHover {
+                    display: block;
+                }
+            }
+        }
+
+
+        .buyInCredit {
+            color: $goldColor;
+
+            &:hover {
+                color: $borderColor;
+                background-color: $goldColor;
+                border: 1px solid $goldColor;
+            }
+        }
+    }
+}

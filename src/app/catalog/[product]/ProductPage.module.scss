@@ -1,0 +1,229 @@
+@import '../../../styles/vars';
+
+
+.main {
+    margin-top: 80px;
+
+    .container {
+        padding: 0 20px;
+
+        .body {
+            max-width: 1440px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            gap: 20px;
+
+            .slider {
+                max-width: 490px;
+                width: 100%;
+                // border: 1px solid $borderColor;
+            }
+
+            .productInfo {
+                max-width: 890px;
+                width: 100%;
+                height: 620px;
+                border: 1px solid $borderColor;
+
+
+                .nameSection {
+                    padding: 40px;
+                    border-bottom: 1px solid $borderColor;
+
+                    .name {
+                        font-size: 24px;
+                        font-weight: 500;
+                        text-transform: capitalize;
+                        color: $mainBlack;
+
+                        span {
+                            color: $goldColor;
+                        }
+                    }
+
+                    .characteristics {
+                        margin-top: 5px;
+                        font-size: 14px;
+                        font-weight: 400;
+                        text-transform: capitalize;
+                        color: $lightGray;
+                    }
+
+                    .rating {
+                        max-width: 180px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        p {
+                            padding-top: 5px;
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: $mainBlack;
+                        }
+                    }
+                }
+
+                .priceSection {
+                    padding: 40px;
+                    display: flex;
+                    justify-content: space-between;
+                    border-bottom: 1px solid $borderColor;
+
+                    .priceBlock {
+                        display: flex;
+                        flex-direction: column;
+
+                        .oldprice {
+                            font-size: 32px;
+                            font-weight: 300;
+                            color: $lightGray;
+                            text-decoration: line-through;
+                            line-height: 28px;
+                        }
+
+                        .price {
+                            font-size: 64px;
+                            font-weight: 300;
+                            line-height: 50px;
+                            color: $goldColor;
+                        }
+
+                    }
+
+                    .buttonsBlock {
+                        max-width: 395px;
+                        width: 100%;
+
+                        .buttonsContainer {
+                            display: flex;
+                            justify-content: space-between;
+
+                            button {
+                                max-width: 185px;
+                                width: 100%;
+                                height: 30px;
+                                border: 1px solid rgba(68, 68, 68, 0.4);
+                                font-size: 14px;
+                            }
+
+                            .addToBagBtn {
+                                display: flex;
+                                justify-content: center;
+                                gap: 10px;
+                                align-items: center;
+                                color: $mainBlack;
+
+
+                                &:hover {
+                                    color: $borderColor;
+                                    background-color: $mainBlack;
+
+                                    img {
+                                        content: none;
+                                        content: '';
+                                        background-image: url('/icons/cart\ white.svg');
+                                    }
+                                }
+                            }
+
+                            .buyInCredit {
+
+                                color: $goldColor;
+
+                                &:hover {
+                                    color: $borderColor;
+                                    background-color: $goldColor;
+                                    border: 1px solid $goldColor;
+                                }
+                            }
+                        }
+
+                        .paymentsMethods {
+                            margin: 26px 0 0 33px;
+                            display: flex;
+                            justify-content: space-between;
+
+                            p {
+                                font-size: 18px;
+                                font-weight: 500;
+                                color: $goldColor;
+                            }
+
+                            .methodsIcons {
+                                display: flex;
+                                gap: 13px;
+                            }
+                        }
+                    }
+                }
+
+                .sellerSection {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 50px 40px;
+                    border-bottom: 1px solid $borderColor;
+
+                    p {
+                        font-size: 24px;
+                        color: $mainBlack;
+
+                        span {
+                            color: $goldColor;
+                        }
+                    }
+                }
+
+                .additionalInfoSection {
+                    display: flex;
+                    padding: 40px;
+                    font-size: 18px;
+                    font-weight: 400;
+                    gap: 141px;
+                    color: $mainBlack;
+
+                    span {
+                        color: $goldColor;
+                    }
+
+                    .delivery {
+                        &::before {
+                            content: url("/icons/deliverycar.svg");
+                            display: inline-block;
+                            width: 37px;
+                            height: 25px;
+                            margin: -3px 20px 0 0;
+                            vertical-align: middle;
+                        }
+
+                        &::after {
+                            content: " ";
+                            display: inline-block;
+                            position: absolute;
+                            width: 1px;
+                            height: 106px;
+                            margin-top: -40px;
+                            margin-left: 68px;
+                            vertical-align: middle;
+                            background-color: $borderColor;
+                        }
+                    }
+
+                    .payment {
+                        &::before {
+                            content: url("/icons/card.svg");
+                            display: inline-block;
+                            width: 38px;
+                            height: 25px;
+                            margin: -3px 20px 0 0;
+                            vertical-align: middle;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

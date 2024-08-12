@@ -1,0 +1,205 @@
+@import '../../../../styles/vars';
+
+.main {
+    .container {
+        padding: 0 20px;
+
+        .body {
+            max-width: 1680px;
+            width: 100%;
+            margin: 0 auto;
+
+            form {
+                margin-top: 80px;
+
+                h1 {
+                    margin-left: 85px;
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: $darkBlue;
+                }
+
+                h2 {
+                    margin-top: 30px;
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: $darkBlue;
+                }
+
+                .inputGroup {
+                    display: flex;
+                    width: 580px;
+                    margin-top: 30px;
+
+                    &:first-child {
+                        display: flex;
+                        gap: 15px;
+                    }
+
+                    &:nth-child(7) {
+                        input {
+                            max-width: 145px;
+                        }
+                    }
+
+                    label {
+                        display: block;
+                        max-width: 230px;
+                        width: 100%;
+                        word-wrap: break-word;
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: $lightGray;
+                    }
+
+                    input {
+                        margin-left: 15px;
+                        float: left;
+                        max-width: 290px;
+                        width: 100%;
+                        height: 32px;
+                        padding-left: 10px;
+                        border: 1px solid $mainBlack;
+                        border-radius: 5px;
+                    }
+
+                    .smallInput {
+                        max-width: 145px;
+                        width: 100%;
+
+                        &:nth-of-type(2) {
+                            margin-left: -10px;
+                        }
+                    }
+
+                    select {
+                        max-width: 290px;
+                        width: 100%;
+                        height: 32px;
+                        padding-left: 10px;
+                        border: 1px solid $mainBlack;
+                        border-radius: 5px;
+                        outline: none;
+                        cursor: pointer;
+                    }
+                }
+
+                .formBody {
+                    display: flex;
+                    gap: 167px;
+
+                    select {
+                        margin-left: 15px;
+                        max-width: 145px;
+                    }
+
+                    .characteristicSide {
+                        #product_type {
+                            max-width: 290px;
+
+                            option {}
+                        }
+                    }
+
+                    .rightsideblock {
+                        .fileuploadBody {
+                            display: flex;
+                            margin-top: 30px;
+                            gap: 61px;
+
+                            .fileUpload {
+                                width: 229px;
+                                height: 160px;
+                                padding: 15px;
+                                gap: 8px;
+                                border: 1px solid $lightGray;
+                                border-radius: 5px;
+
+                                #imagePreviewContainer {
+                                    display: grid;
+                                    grid-template-columns: repeat(3, 1fr);
+                                    grid-template-rows: repeat(2, 1fr);
+
+                                    height: 130px;
+                                    gap: 8px;
+
+                                    img {
+                                        width: 61px;
+                                        height: 61px;
+                                        border-radius: 5px;
+                                    }
+                                }
+                            }
+
+                            .filebuttons {
+                                width: 230px;
+
+                                .loadfiles {
+                                    visibility: hidden;
+                                }
+
+                                .loadfileslink {
+                                    visibility: visible;
+                                }
+
+                                button {
+                                    &:not(:last-child) {
+                                        margin-bottom: 8px;
+                                    }
+                                }
+
+                                .loadfiles {
+                                    color: $mainBlack;
+                                    font-size: 18px;
+                                    font-weight: 200;
+                                    text-decoration: underline;
+                                    cursor: pointer;
+                                }
+
+                                .deleteBtn {
+                                    margin-top: 23px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .mainBtn {
+                    max-width: 230px;
+                    width: 100%;
+                    min-height: 33px;
+                    font-size: 18px;
+                    border-radius: 5px;
+                    color: #fefefe;
+                    background-color: $mainBlack;
+
+                    &:hover {
+                        color: $mainBlack;
+                        border: 1px solid $mainBlack;
+                        background-color: transparent;
+                    }
+                }
+
+                .secondarybtn {
+                    max-width: 230px;
+                    width: 100%;
+                    height: 33px;
+                    color: $mainBlack;
+                    border: 1px solid $lightGray;
+                    border-radius: 5px;
+
+                    &:hover {
+                        color: #fefefe;
+                        background-color: $mainBlack;
+                    }
+                }
+
+                .confirmBtn {
+                    max-width: 290px;
+                    height: 64px;
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+}

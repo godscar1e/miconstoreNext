@@ -1,0 +1,26 @@
+.sliderContainer {
+    margin: 0 auto;
+
+    .activeSlide {
+        border: 1px solid #d9d9d9;
+    }
+}
+
+.slickDots {
+    display: flex !important;
+    justify-content: space-between;
+    margin-top: 26px;
+    padding: 0;
+    list-style: none;
+
+    li {
+
+        a {
+            display: block;
+        }
+
+        &.slick-active {
+            border: 2px solid blue !important;
+        }
+    }
+}

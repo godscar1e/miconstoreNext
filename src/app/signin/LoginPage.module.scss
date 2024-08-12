@@ -1,0 +1,30 @@
+@import '../../styles/vars';
+
+.container {
+    max-width: 712px;
+    width: 100%;
+    margin: 154px auto 0 auto;
+    padding: 0 20px;
+
+    .title {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 400;
+        color: $mainBlack;
+    }
+
+    a {
+        width: 207px;
+        height: 21px;
+        color: $goldColor;
+        display: block;
+
+        margin: 10px auto 0 auto;
+        font-size: 17px;
+
+        &:hover {
+            color: #b37e2d;
+        }
+    }
+}

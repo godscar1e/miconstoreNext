@@ -1,4 +1,4 @@
-@import "../../app/styles/starter.scss";
+@import "../../styles/vars";
 
 
 .customAlert {
@@ -12,21 +12,19 @@
     box-shadow: 0px 4px 4px 0px #00000040;
 
     h1 {
-        font-family: Georgia;
         font-size: 24px;
         font-weight: 400;
         line-height: 27.27px;
         text-align: center;
-        color: $mainBlue;
+        color: $darkBlue;
     }
 
     p {
         margin-top: 7px;
-        font-family: Georgia;
         font-size: 18px;
         font-weight: 400;
 
-        color: #1F7079;
+        color: $darkBlue;
     }
 
     .buttonContainer {
@@ -41,10 +39,10 @@
         max-width: 83px;
         width: 100%;
         height: 32px;
-        color: $mainBlue;
+        color: $darkBlue;
 
         border-radius: 5px;
-        border: 1px solid #1F7079;
+        border: 1px solid $darkBlue;
         cursor: pointer;
         transition: background-color 0.3s;
 

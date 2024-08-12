@@ -1,0 +1,54 @@
+@import '../../../styles/vars';
+
+.topblock {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1920px;
+    width: 100%;
+    height: 350px;
+    margin: 15px 0 0 0;
+    padding: 0 85px 0 147px;
+    background: #eeeff1;
+    box-sizing: border-box;
+
+    .body {
+        text-align: center;
+
+        .text {
+            max-width: 711px;
+            width: 100%;
+            margin-top: 65px;
+            text-align: center;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 200;
+            line-height: normal;
+            color: $mainBlack;
+        }
+
+        a {
+            .catalogButton {
+                max-width: 350px;
+                width: 100%;
+                height: 30px;
+                color: $mainBlack;
+                margin-top: 46px;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: normal;
+                text-transform: uppercase;
+                border: 1px solid #d9d9d9;
+                background-color: #eeeff1;
+                box-shadow: 3px 3px 3px $mainGreen;
+                transition: all ease-in-out 0.2s;
+                cursor: pointer;
+
+                &:hover {
+                    color: #eeeff1;
+                    background-color: $mainBlack;
+                }
+            }
+        }
+    }
+
+}

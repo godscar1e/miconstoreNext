@@ -1,0 +1,79 @@
+@import '../../../styles/vars';
+
+
+
+.goodsContainer {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(217px, 1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 45px;
+
+    .card {
+        text-decoration: none;
+
+        .cardContent {
+            width: 217px;
+            height: 317px;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            border: 1px solid $borderColor;
+
+            .name {
+                margin-top: 9px;
+                font-size: 14px;
+                font-weight: 400;
+                color: $mainBlack;
+            }
+
+            .oldprice {
+                margin: auto 0 0 auto;
+                font-size: 14px;
+                text-decoration: line-through;
+                color: $lightGray;
+            }
+
+            .checkoutBtn {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-left: 10px;
+                border: 1px solid $goldColor;
+
+                .checkoutLabel {
+                    text-transform: uppercase;
+                    color: $mainBlack;
+                    font-size: 12px;
+                    font-weight: 300;
+                }
+
+                .price {
+                    padding: 0 10px;
+                    font-size: 18px;
+                    color: #FEFFFF;
+                    background-color: $goldColor;
+                }
+
+                &:hover {
+                    background-color: $mainBlack;
+                    border: 1px solid $lightGray;
+
+                    img {
+                        content: none;
+                        content: '';
+                        background-image: url('/icons/item-cartwht.svg');
+                    }
+
+                    .checkoutLabel {
+                        color: #FEFFFF;
+                    }
+
+                    .price {
+                        background-color: $lightGray;
+                    }
+                }
+            }
+        }
+    }
+}

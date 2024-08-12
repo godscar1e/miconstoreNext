@@ -1,0 +1,97 @@
+@import "./vars";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+    padding: 0 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+
+    .block {
+        flex: 1;
+        position: relative;
+
+        .tableTitle {
+            position: absolute;
+            width: 100%;
+            height: 84px;
+            display: flex;
+            align-items: center;
+            margin-top: -30px;
+            padding: 0 30px;
+            border-radius: 15px;
+
+            background-color: $mainBlack;
+
+            p {
+                font-size: 20px;
+                font-weight: 600;
+                color: #fff;
+            }
+        }
+
+        .table {
+            padding-top: 90px;
+
+            table {
+                border-collapse: collapse;
+            }
+
+            thead {
+                padding: 20px 0;
+                text-align: left;
+                color: rgb(120 144 156);
+                border-bottom: 1px solid #e0e0e0;
+                font-size: 16px;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    height: 20px;
+                }
+            }
+
+            td {
+                max-width: 350px;
+                min-width: 100px;
+                padding-right: 30px;
+                overflow: auto;
+            }
+
+            .tableRow {
+                width: 100%;
+                height: 70px;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid #e0e0e0;
+                }
+
+                .nameColumn {
+                    display: flex;
+                    max-width: 250px;
+                    width: 100%;
+                    gap: 20px;
+
+
+                    .profileImage {
+                        border-radius: 5px;
+                    }
+
+                    .userInfo {
+                        .nameBlock {
+                            display: flex;
+                            font-weight: 600;
+                        }
+
+                        .userEmail {
+                            font-size: 14px;
+                            color: rgb(120 144 156);
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,293 @@
+@import '../../../styles/vars';
+@import "https://fonts.googleapis.com/css?family=Unna:regular&display=swap";
+
+.bottomblock {
+    bottom: 0;
+    height: 407px;
+
+    .container {
+        display: flex;
+        // flex-wrap: wrap;
+
+        .mostpopular {
+            max-width: 960px;
+            width: 100%;
+            margin-top: 30px;
+
+            .label {
+                display: flex;
+                justify-content: center;
+
+                .cirle {
+                    content: "";
+                    display: inline-block;
+                    border-radius: 50%;
+                }
+
+                .cirle1 {
+                    width: 9px;
+                    height: 9px;
+                    margin: 0 5px 5px 0;
+                    align-self: flex-end;
+                    background-color: $mainBlack;
+                }
+
+                .cirle2 {
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 12px;
+                    align-self: center;
+                    background-color: $goldColor;
+                }
+
+                .cirle3 {
+                    width: 18px;
+                    height: 18px;
+                    margin-left: 8px;
+                    align-self: center;
+                    background-color: $mainGreen;
+                }
+
+                .cirle4 {
+                    width: 9px;
+                    height: 9px;
+                    margin: 5px 0 0 5px;
+                    align-self: flex-start;
+                    background-color: $borderColor;
+                }
+
+                .text {}
+
+                text-align: center;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: normal;
+                color: $mainBlack;
+            }
+
+            .swiper {
+                width: 745px;
+                height: 100%;
+                margin-top: 30px;
+
+                .swiper-wrapper {
+                    display: flex;
+                    max-width: 711px;
+                    width: 100%;
+                    align-items: center;
+
+                    .swiper-slide {
+                        width: 217px;
+                        height: 317px;
+                        border: 1px solid $borderColor;
+                        background: #feffff;
+                        cursor: pointer;
+
+                        &__container {
+                            padding: 15px;
+                        }
+
+                        &__image {}
+
+                        &__name {
+                            width: 187px;
+                            margin-top: 9px;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: normal;
+                        }
+
+                        &__oldprice {
+                            margin-top: 15px;
+                            font-family: Rasa;
+                            font-size: 14px;
+                            font-weight: 300;
+                            line-height: normal;
+                            text-align: right;
+                            text-decoration: line-through;
+                        }
+
+                        .checkout-btn {
+                            position: relative;
+                            display: flex;
+                            width: 187px;
+                            height: 22px;
+                            color: $mainBlack;
+                            border: 1px solid $goldColor;
+                            transition: all ease-in-out 0.2s;
+
+                            &:hover {
+                                background-color: $mainBlack;
+                                color: white;
+                                border-top: 1px solid $mainBlack;
+                                border-bottom: 1px solid $mainBlack;
+                                border-left: 1px solid $mainBlack;
+                                border-right: 1px solid $mainBlack;
+
+                                >.checkout-btn__label {
+                                    a {
+                                        color: white;
+                                    }
+                                }
+
+                                >.checkout-btn__price-rect {
+                                    background-color: $mainBlack;
+                                }
+
+                                >.checkout-btn__cartimg {
+                                    background-image: url("/images/cart white.svg");
+                                }
+                            }
+
+                            &__cartimg {
+                                position: relative;
+                                align-self: center;
+                                margin: 0 29px 0 10px;
+                            }
+
+                            &__label {
+                                align-self: center;
+                                font-size: 12px;
+                                font-weight: 300;
+
+                                a {
+                                    text-decoration: none;
+                                    margin-left: 10px;
+                                    font-size: 12px;
+                                    font-weight: 300;
+                                    color: $mainBlack;
+                                }
+                            }
+
+                            &__price-rect {
+                                position: absolute;
+                                top: -5%;
+                                right: 0;
+                                width: 46px;
+                                height: 110%;
+                                color: #feffff;
+                                text-align: center;
+                                font-family: Rasa;
+                                font-size: 18px;
+                                font-weight: 300;
+                                line-height: normal;
+                                background-color: $goldColor;
+                                transition: all ease-in-out 0.2s;
+                            }
+                        }
+                    }
+                }
+
+                .swiper-button-prev,
+                .swiper-button-next {
+                    background-image: url("/icons/left-arrow-ico.svg");
+                    width: 7px;
+                    height: 12px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                .swiper-button-next {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .recentnews {
+            position: relative;
+            max-width: 811px;
+            width: 100%;
+
+            .secondaryblock {
+                display: flex;
+                max-width: 811px;
+                justify-content: space-between;
+                // flex-wrap: wrap;
+                margin-top: 189px;
+
+                .selectedBlock {
+                    width: 434px;
+                    height: 217px;
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+                    .slide {
+                        position: relative;
+
+                        a {
+                            img {
+                                object-fit: cover;
+                            }
+                        }
+
+                        .slideText {
+                            position: absolute;
+                            width: 434px;
+                            height: 38px;
+                            margin-top: -42px;
+                            padding: 6px 0 7px 10px;
+                            color: #fff;
+                            text-align: justify;
+                            font-size: 20px;
+                            line-height: normal;
+                            background: rgba(68, 68, 68, 0.6);
+                        }
+                    }
+                }
+
+                .sliderBlockContainer {
+                    display: block;
+
+                    .newslabel {
+                        margin-left: 10px;
+                        color: $mainBlack;
+                        text-align: justify;
+                        font-size: 24px;
+                        font-weight: 700;
+                        line-height: normal;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 5px;
+                            height: 29px;
+                            margin-left: -10px;
+                            background-color: $mainGreen;
+                        }
+                    }
+
+                    .slider {
+                        width: 317px;
+                        height: 158px;
+                        margin-top: 30px;
+                        overflow: hidden;
+                        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+                        .sliderSlide {
+                            position: relative;
+                            cursor: pointer;
+
+                            .slideText {
+                                position: absolute;
+                                width: 317px;
+                                height: 29px;
+                                margin-top: -32px;
+                                padding: 6px 0 7px 10px;
+                                color: #fff;
+                                text-align: justify;
+                                font-size: 14px;
+                                font-weight: 400;
+                                line-height: normal;
+                                background: rgba(68, 68, 68, 0.6);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

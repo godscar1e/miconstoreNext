@@ -1,0 +1,19 @@
+.container {
+    padding: 0 20px;
+
+    .main {
+        max-width: 1680px;
+        width: 100%;
+        margin: 46px auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+
+        .rightSide {
+            max-width: 1245px;
+            width: 100%;
+
+        }
+    }
+
+}

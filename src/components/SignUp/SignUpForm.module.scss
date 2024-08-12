@@ -1,0 +1,102 @@
+@import '../../styles/vars';
+
+.form {
+    max-width: 1036px;
+    width: 100%;
+    height: auto;
+    margin: 40px auto 0 auto;
+
+    .formContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        // grid-row-gap: 30px;
+        grid-column-gap: 60px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, auto);
+        }
+
+        .formGroup {
+            min-height: 72px;
+            height: auto;
+
+            @media (max-width: 768px) {
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                margin-left: 10px;
+            }
+
+            input {
+                max-width: 697px;
+                width: 100%;
+                height: 40px;
+                margin: 10px 0 30px 0;
+                padding-left: 40px;
+                color: $mainBlack;
+                font-size: 14px;
+                font-weight: 300;
+                border-radius: 5px;
+                border: 1px solid $borderColor;
+                word-wrap: break-word;
+            }
+
+            .emailError {
+                margin: -14px 0;
+            }
+        }
+    }
+
+
+    .error {
+        color: red;
+        font-size: 15px;
+    }
+
+    .passError {
+        margin-bottom: 20px;
+    }
+
+    .problemLabel {
+        display: none;
+        color: red;
+
+        ul {
+            li {
+
+                &.invalid-length,
+                &.invalid-uppercase,
+                &.invalid-lowercase,
+                &.invalid-digit {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 300px;
+        width: 100%;
+        height: 40px;
+        margin-top: 30px;
+        border-radius: 5px;
+        border: 1px solid $goldColor;
+        color: $goldColor;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 400;
+
+        &:hover {
+            color: #fff;
+            background-color: $goldColor;
+            transition: all 0.3s ease-out;
+        }
+    }
+}

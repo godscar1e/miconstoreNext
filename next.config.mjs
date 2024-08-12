@@ -2,24 +2,22 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async redirects() {
-        return [
-            {
-                source: '/login',
-                has: [
-                    {
-                        type: 'cookie',
-                        key: 'session',
-                    },
-                ],
-                destination: '/',
-                permanent: false,
-            },
-        ];
-    },
-    experimental: {
-        output: 'export',
-    },
-};
+	// async redirects() {
+	// 	return [
+	// 		{
+	// 			source: '/login',
+	// 			has: [
+	// 				{
+	// 					type: 'cookie',
+	// 					key: 'session',
+	// 				},
+	// 			],
+	// 			destination: '/',
+	// 			permanent: false,
+	// 		},
+	// 	]
+	// },
 
-export default nextConfig;
+}
+
+export default nextConfig

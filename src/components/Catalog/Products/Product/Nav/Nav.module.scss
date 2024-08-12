@@ -1,0 +1,22 @@
+@import '../../../../../styles/vars';
+
+.navigation {
+    border-bottom: 1px solid $borderColor;
+
+    .topnav {
+        display: flex;
+        justify-content: space-between;
+        padding: 19px 50px;
+        color: $mainBlack;
+
+        .navbtn {
+            font-size: 18px;
+            font-weight: 400;
+            color: $lightGray;
+
+            &.active {
+                color: $goldColor;
+            }
+        }
+    }
+}
