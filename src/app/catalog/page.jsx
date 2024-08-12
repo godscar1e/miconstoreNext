@@ -1,14 +1,13 @@
 'use client'
 
-import dynamic from 'next/dynamic'
-import React, { useState } from 'react'
-import styles from './Catalog.module.scss'
 import Filtres from '@/components/Catalog/Filtres/Filtres'
+import { useState } from 'react'
+import styles from './Catalog.module.scss'
 // const TopFiltres = dynamic(() => import('@/components/Catalog/TopFiltres/TopFiltres'), { ssr: false })
-import TopFiltres from '@/components/Catalog/TopFiltres/TopFiltres'
 import Products from '@/components/Catalog/Products/Products'
+import TopFiltres from '@/components/Catalog/TopFiltres/TopFiltres'
 
-import { ProductProvider } from '@/context/ProductContext'
+import { ProductProvider } from '@/app/context/ProductContext'
 
 export default function Catalog() {
 	const [activeFilters, setActiveFilters] = useState({})

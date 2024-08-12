@@ -1,11 +1,11 @@
 // Products.jsx
 'use client'
-import React from 'react'
-import styles from './Products.module.scss'
+import { useProducts } from '@/app/context/ProductContext'
+import { Rasa } from "next/font/google"
 import Image from 'next/image'
 import Link from 'next/link'
-import { Rasa } from "next/font/google"
-import { useProducts } from '@/context/ProductContext'
+import React from 'react'
+import styles from './Products.module.scss'
 
 const rasa = Rasa({
 	subsets: ["latin"],

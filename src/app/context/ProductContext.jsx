@@ -6,9 +6,11 @@ const ProductContext = createContext()
 
 export function ProductProvider({ children }) {
 	const [products, setProducts] = useState(() => {
-		// Попробуйте получить данные из Local Storage при инициализации
-		const localData = localStorage.getItem('products')
-		return localData ? JSON.parse(localData) : []
+		if (typeof window !== 'undefined') {
+			const localData = localStorage.getItem('products')
+			return localData ? JSON.parse(localData) : []
+		}
+		return []
 	})
 
 	useEffect(() => {
