@@ -45,7 +45,8 @@ export default function TopFiltres({ onSearchChange }) {
 						borderRadius: '0',
 						borderTopRightRadius: '5px',
 						boxShadow: 'none',
-						padding: '0 15px'
+						padding: '0 15px',
+						height: '40px'
 					}),
 					dropdownIndicator: (baseStyles) => ({
 						...baseStyles,

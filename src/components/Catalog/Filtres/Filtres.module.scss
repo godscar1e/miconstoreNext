@@ -3,6 +3,10 @@
 .filtres {
     max-width: 215px;
 
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
+
     .priceFiltre {
         margin-bottom: 20px;
     }

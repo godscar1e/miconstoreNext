@@ -7,6 +7,7 @@
         display: flex;
         justify-content: space-between;
         padding: 19px 50px;
+        gap: 10px;
         color: $mainBlack;
 
         .navbtn {
@@ -18,5 +19,59 @@
                 color: $goldColor;
             }
         }
+    }
+}
+
+.nav4small {
+    display: none;
+    width: 100%;
+    position: sticky;
+    top: 60px;
+    z-index: 846;
+    background-color: white;
+    border-bottom: 1px solid $borderColor;
+
+    .topnav {
+        display: flex;
+        position: relative;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 19px 0 !important;
+        color: $mainBlack;
+
+        .navbtn {
+            font-size: 18px;
+            font-weight: 400;
+            white-space: nowrap;
+            color: $lightGray;
+
+            &.active {
+                color: $goldColor;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    .topnav {
+        padding: 19px 20px !important;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .topnav {
+        overflow-x: scroll;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .nav4small {
+        display: flex !important;
+    }
+
+    .navigation {
+        display: none !important;
     }
 }

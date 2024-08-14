@@ -1,3 +1,5 @@
+@import '../../styles/vars';
+
 .container {
     padding: 0 20px;
 
@@ -13,6 +15,19 @@
             max-width: 1245px;
             width: 100%;
 
+            .topFiltres {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+            }
+        }
+
+        .filtresDrawer {
+            display: none;
+
+            @media screen and (max-width: 1200px) {
+                display: block;
+            }
         }
     }
 

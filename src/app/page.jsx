@@ -6,16 +6,18 @@ import { auth } from '@/auth/auth'
 
 const Home = async () => {
 
-  // const session = await auth()
-  // if (!session.user) redirect('/signin')
-  return (
-    <main className={styles.main}>
-      <div className={styles.container}>
-        <TopBlock />
-        <BottomBlock />
-        {/* <h1>{session?.user?.name}</h1> */}
-      </div>
-    </main>
-  )
+	// const session = await auth()
+	// if (!session.user) redirect('/signin')
+	return (
+		<main className={styles.main}>
+			<div className={styles.container}>
+				<div className={styles.body}>
+					<TopBlock />
+					<BottomBlock />
+				</div>
+				{/* <h1>{session?.user?.name}</h1> */}
+			</div>
+		</main>
+	)
 }
 export default Home

@@ -1,10 +1,24 @@
+@import '../../../../styles/vars';
+
+
+
 .sliderContainer {
     margin: 0 auto;
 
     .activeSlide {
+        width: 100%;
         border: 1px solid #d9d9d9;
     }
 }
+
+.paginationDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $lightGray;
+    margin: 0 5px;
+}
+
 
 .slickDots {
     display: flex !important;
@@ -13,8 +27,16 @@
     padding: 0;
     list-style: none;
 
-    li {
+    @media screen and (max-width: 1101px) {
+        justify-content: center;
+        gap: 10px;
+    }
 
+    @media screen and (min-width: 1101px) {
+        display: none; // Скрыть точки при ширине экрана больше 1100px
+    }
+
+    li {
         a {
             display: block;
         }
@@ -22,5 +44,9 @@
         &.slick-active {
             border: 2px solid blue !important;
         }
+    }
+
+    .customActive {
+        background-color: $goldColor !important;
     }
 }

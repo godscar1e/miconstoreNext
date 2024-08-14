@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import styles from './Header.module.scss'
 import SessionLogger from "@/components/SessionLogger"
+import BurgerMenu from './BurgerMenu/BurgerMenu'
 
 export default function Header() {
 	const [session, setSession] = useState(null)
@@ -30,6 +31,9 @@ export default function Header() {
 						<div className={styles.navigation}>
 							<Image src='/icons/header/cart.svg' width={30} height={30} />
 							<Image src='/icons/header/profile.svg' width={24} height={30} />
+						</div>
+						<div className={styles.burgerMenu}>
+							<BurgerMenu />
 						</div>
 					</div>
 				</div>

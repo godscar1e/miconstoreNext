@@ -8,6 +8,7 @@ import Products from '@/components/Catalog/Products/Products'
 import TopFiltres from '@/components/Catalog/TopFiltres/TopFiltres'
 
 import { ProductProvider } from '@/app/context/ProductContext'
+import FiltresDrawer from '@/components/Catalog/FiltresDrawer/FiltresDrawer'
 
 export default function Catalog() {
 	const [activeFilters, setActiveFilters] = useState({})
@@ -26,7 +27,12 @@ export default function Catalog() {
 			<div className={styles.main}>
 				<Filtres onFiltersChange={handleFiltersChange} />
 				<div className={styles.rightSide}>
-					<TopFiltres onSearchChange={handleSearchChange} />
+					<div className={styles.topFiltres}>
+						<div className={styles.filtresDrawer}>
+							<FiltresDrawer onFiltersChange={handleFiltersChange} />
+						</div>
+						<TopFiltres onSearchChange={handleSearchChange} />
+					</div>
 					<ProductProvider>
 						<Products activeFilters={activeFilters} searchTerm={searchTerm} />
 					</ProductProvider>

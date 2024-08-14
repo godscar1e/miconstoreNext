@@ -13,7 +13,8 @@
         text-decoration: none;
 
         .cardContent {
-            width: 217px;
+            max-width: 217px;
+            width: 100%;
             height: 317px;
             display: flex;
             flex-direction: column;

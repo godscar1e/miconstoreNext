@@ -1,6 +1,13 @@
 @import "../../styles/_vars.scss";
 
 .header {
+    @media screen and (max-width: 1200px) {
+        position: sticky;
+        width: 100%;
+        top: 0;
+        z-index: 860;
+        background-color: white;
+    }
 
     .container {
         padding: 0 20px;
@@ -40,6 +47,27 @@
                 padding: 15px 0;
                 text-align: right;
             }
+
+            .burgerMenu {
+                display: none;
+            }
+
+            @media screen and (max-width: 1200px) {
+
+                .burgerMenu {
+                    display: block;
+                }
+
+                .email,
+                .navigation {
+                    display: none;
+                }
+
+            }
         }
     }
+}
+
+.hamburger-react {
+    display: none;
 }

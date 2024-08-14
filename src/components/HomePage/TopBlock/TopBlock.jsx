@@ -18,9 +18,9 @@ export default function TopBlock() {
 					</button>
 				</Link>
 			</div>
-			<div className={styles.image}>
-				<Image src="/images/bgimage.png" width={930} height={472} alt="bgimage" />
-			</div>
+			{/* <div className={styles.image}> */}
+			<Image src="/images/bgimage.png" width={930} height={472} alt="bgimage" />
+			{/* </div> */}
 		</section>
 	)
 }

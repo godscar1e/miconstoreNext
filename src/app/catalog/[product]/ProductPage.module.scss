@@ -4,6 +4,10 @@
 .main {
     margin-top: 80px;
 
+    @media screen and (max-width: 1220px) {
+        margin-top: 40px;
+    }
+
     .container {
         padding: 0 20px;
 
@@ -17,15 +21,22 @@
             .slider {
                 max-width: 490px;
                 width: 100%;
-                // border: 1px solid $borderColor;
+                margin: 0 auto;
+
             }
 
             .productInfo {
                 max-width: 890px;
                 width: 100%;
-                height: 620px;
+                height: 100%;
                 border: 1px solid $borderColor;
 
+
+                @media screen and (max-width: 1100px) {
+                    max-width: 1110px;
+                    // height: 560px;
+                    margin-bottom: 20px;
+                }
 
                 .nameSection {
                     padding: 40px;
@@ -66,14 +77,15 @@
                 }
 
                 .priceSection {
-                    padding: 40px;
                     display: flex;
                     justify-content: space-between;
+                    padding: 40px;
                     border-bottom: 1px solid $borderColor;
 
                     .priceBlock {
                         display: flex;
                         flex-direction: column;
+                        width: 100%;
 
                         .oldprice {
                             font-size: 32px;
@@ -96,54 +108,46 @@
                         max-width: 395px;
                         width: 100%;
 
-                        .buttonsContainer {
+
+                        button {
+                            max-width: 395px;
+                            width: 100%;
+                            height: 40px;
+                            border: 1px solid rgba(68, 68, 68, 0.4);
+                            font-size: 16px;
+                        }
+
+                        .addToBagBtn {
                             display: flex;
-                            justify-content: space-between;
-
-                            button {
-                                max-width: 185px;
-                                width: 100%;
-                                height: 30px;
-                                border: 1px solid rgba(68, 68, 68, 0.4);
-                                font-size: 14px;
-                            }
-
-                            .addToBagBtn {
-                                display: flex;
-                                justify-content: center;
-                                gap: 10px;
-                                align-items: center;
-                                color: $mainBlack;
+                            justify-content: center;
+                            gap: 10px;
+                            align-items: center;
+                            color: $mainBlack;
 
 
-                                &:hover {
-                                    color: $borderColor;
-                                    background-color: $mainBlack;
+                            &:hover {
+                                color: $borderColor;
+                                background-color: $mainBlack;
 
-                                    img {
-                                        content: none;
-                                        content: '';
-                                        background-image: url('/icons/cart\ white.svg');
-                                    }
-                                }
-                            }
-
-                            .buyInCredit {
-
-                                color: $goldColor;
-
-                                &:hover {
-                                    color: $borderColor;
-                                    background-color: $goldColor;
-                                    border: 1px solid $goldColor;
+                                img {
+                                    content: none;
+                                    content: '';
+                                    width: 16px;
+                                    height: 16px;
+                                    background-image: url('/icons/cart\ white.svg');
+                                    background-repeat: no-repeat;
                                 }
                             }
                         }
 
+
+
                         .paymentsMethods {
-                            margin: 26px 0 0 33px;
+                            margin-top: 16px;
                             display: flex;
                             justify-content: space-between;
+                            flex-wrap: wrap;
+                            gap: 10px;
 
                             p {
                                 font-size: 18px;
@@ -156,6 +160,91 @@
                                 gap: 13px;
                             }
                         }
+
+                        @media screen and (max-width: 604px) {
+                            .buttonsContainer {
+                                flex-direction: column;
+                            }
+
+                            // .paymentsMethods {
+                            //     display: none;
+                            // }
+                        }
+                    }
+                }
+
+                .stickyPriceSection {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 10px;
+                    padding: 20px;
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: #fff;
+                    border-top: 1px solid $borderColor;
+                    z-index: 846;
+
+                    &.hidden {
+                        display: none;
+                    }
+
+                    .priceBlock {
+                        // display: flex;
+                        // flex-direction: column;
+                        width: 100%;
+
+                        .oldprice {
+                            font-size: 25px;
+                            font-weight: 300;
+                            text-align: left;
+                            color: $lightGray;
+                            text-decoration: line-through;
+                        }
+
+                        .price {
+                            font-size: 35px;
+                            font-weight: 300;
+                            color: $goldColor;
+                            line-height: 15px;
+                        }
+
+                    }
+
+                    .buttonsBlock {
+                        // max-width: 340px;
+                        max-width: 250px;
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 20px;
+
+                        button {
+                            max-width: 250px;
+                            width: 100%;
+                            height: 40px;
+                            border-radius: 10px;
+                            border: 1px solid rgba(68, 68, 68, 0.4);
+                            font-size: 18px;
+                        }
+
+                        .addToBagBtn {
+                            display: flex;
+                            justify-content: center;
+                            gap: 10px;
+                            align-items: center;
+                            color: $mainBlack;
+
+                            img {
+                                display: none;
+                            }
+
+                            &:hover {
+                                color: $borderColor;
+                                background-color: $mainBlack;
+                            }
+                        }
                     }
                 }
 
@@ -165,6 +254,7 @@
                     align-items: center;
                     padding: 50px 40px;
                     border-bottom: 1px solid $borderColor;
+
 
                     p {
                         font-size: 24px;
@@ -177,18 +267,32 @@
                 }
 
                 .additionalInfoSection {
-                    display: flex;
-                    padding: 40px;
+                    display: grid;
+                    height: 106px;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(1, 1fr);
+                    align-items: center;
+                    justify-content: center;
                     font-size: 18px;
                     font-weight: 400;
-                    gap: 141px;
                     color: $mainBlack;
+
+
+                    &> :first-child {
+                        border-right: 1px solid $borderColor;
+                        padding-right: 70px;
+                    }
 
                     span {
                         color: $goldColor;
                     }
 
                     .delivery {
+                        height: 106px;
+                        display: flex;
+                        padding-left: 40px;
+                        align-items: center;
+
                         &::before {
                             content: url("/icons/deliverycar.svg");
                             display: inline-block;
@@ -198,20 +302,15 @@
                             vertical-align: middle;
                         }
 
-                        &::after {
-                            content: " ";
-                            display: inline-block;
-                            position: absolute;
-                            width: 1px;
-                            height: 106px;
-                            margin-top: -40px;
-                            margin-left: 68px;
-                            vertical-align: middle;
-                            background-color: $borderColor;
-                        }
+
                     }
 
                     .payment {
+                        height: 106px;
+                        display: flex;
+                        margin-left: 40px;
+                        align-items: center;
+
                         &::before {
                             content: url("/icons/card.svg");
                             display: inline-block;
@@ -222,8 +321,40 @@
                         }
                     }
 
+                    @media screen and (max-width: 600px) {
+                        height: 100%;
+                        grid-template-columns: repeat(1, 1fr);
+                        grid-template-rows: repeat(2, 1fr);
+
+                        .delivery {
+                            border-right: none;
+                            border-bottom: 1px solid $borderColor;
+                        }
+                    }
+
                 }
             }
         }
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .body {
+        flex-wrap: wrap;
+
+        .slider {
+            max-width: 1100px !important;
+        }
+    }
+
+    .stickyPriceSection {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1101px) {
+    .stickyPriceSection {
+        display: none !important;
     }
 }

@@ -4,7 +4,8 @@ import { useRouter } from 'next/navigation'
 import styles from './Nav.module.scss'
 import Link from 'next/link'
 
-export default function Nav({ productName }) {
+export default function Nav({ className, productName }) {
+
 	const router = useRouter()
 	const formattedProductName = encodeURIComponent(productName.trim().replace(/ /g, '_').toLowerCase())
 
@@ -20,8 +21,11 @@ export default function Nav({ productName }) {
 		return currentPath.startsWith(path) && currentPath === path
 	}
 
+	// Динамически определяем класс
+	const dynamicClass = styles[className] || ''
+
 	return (
-		<div className={styles.navigation}>
+		<div className={dynamicClass}>
 			<div className={styles.topnav}>
 				<Link
 					href={`/catalog/${formattedProductName}`}
